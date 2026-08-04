@@ -1,7 +1,7 @@
 import { ArrowRightCircle, CheckCircle2 } from "lucide-react";
 
-const UPGRADE_URL = "https://pay.kirvano.com/1ff83d6f-f7bf-481b-8da8-91d37248051e";
-const BASIC_URL = "https://pay.kirvano.com/d3700e35-2e55-4e84-999e-d308363957cd";
+const UPGRADE_URL = "https://members.ia.br/checkout/123?offer=56d5b0fa-8cb0-4b3a-a142-e56b8af70783";
+const BASIC_URL = "https://members.ia.br/checkout/123?offer=68112ea2-7903-4e8b-a379-3bb3a5ff6bae";
 
 const HERO_IMG = "https://udcsokdtdqqdnoqozbxh.supabase.co/storage/v1/object/public/heros-lp/canvapro/hero.webp";
 
