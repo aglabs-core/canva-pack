@@ -87,7 +87,7 @@ const SITES = [
   "https://udcsokdtdqqdnoqozbxh.supabase.co/storage/v1/object/public/heros-lp/canvapro/Captura%20de%20tela%202026-06-02%20092209.png",
 ];
 
-const CHECKOUT_URL = "https://pay.kirvano.com/bf80c29f-2f27-4e72-bd59-322714a12cc6";
+const CHECKOUT_URL = "https://members.ia.br/checkout/123?offer=4cccd402-6d6e-4bbe-97b7-081a6aae0a02";
 const BASIC_URL = "/oferta-especial";
 
 const CTAButton = ({ href = "#oferta", children, className = "" }: { href?: string; children: React.ReactNode; className?: string }) => (
