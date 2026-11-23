@@ -1,0 +1,36 @@
+name: Qualidade do Pack Canva
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PORT: '3000'
+      BASE_PATH: /
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0
+        with:
+          version: '10.32.1'
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - run: pnpm --filter @workspace/pack-canva run typecheck
+      - run: pnpm --filter @workspace/pack-canva run build
+      - run: test -s artifacts/pack-canva/dist/public/index.html
+
